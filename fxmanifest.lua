@@ -25,8 +25,11 @@ server_scripts {
     '@oxmysql/lib/MySQL.lua',
     'server/helpers/functions.lua',
     'server/services/*.lua',
+    'server/migration/*.lua',
     'server/main.lua'
 }
+
+
 ui_page {
     "ui/index.html"
 }

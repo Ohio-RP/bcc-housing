@@ -1,72 +1,72 @@
 Config = {
-    -- Set your language here
-    defaultlang = 'en_lang',
+    -- Defina seu idioma aqui
+    defaultlang = 'br_lang',
     -----------------------------------------------------
 
-    DevMode = false,               -- False on live server
-    DevModeCommand = "HousingDev", -- This command need to be sent after restarting the resource
+    DevMode = true,               -- False no servidor ao vivo
+    DevModeCommand = "HousingDev", -- Este comando precisa ser enviado após reiniciar o recurso
     -----------------------------------------------------
 
     keys = {
-        manage = 'G',  -- [G] Manage House
-        collect = 'G', -- [G] Collect money from selling house
-        buy = 'G',     -- [B] Buy house
+        manage = 'G',  -- [G] Gerenciar Casa
+        collect = 'G', -- [G] Coletar dinheiro da venda da casa
+        buy = 'G',     -- [B] Comprar casa
     },
     -----------------------------------------------------
 
-    -- Set your admin group here
+    -- Defina seu grupo de administrador aqui
     adminGroup = 'admin',
     -----------------------------------------------------
 
-    -- Jobs that will be able to make houses just like the admins can above. Useful for real estate jobs
+    -- Empregos que poderão criar casas assim como os administradores acima. Útil para empregos de corretor de imóveis
     ALlowedJobs = {
-        { jobname = 'realtor' }, --to add more just copy/paste and change job name
+        { jobname = 'realtor' }, -- Para adicionar mais, apenas copie/cole e altere o nome do emprego
     },
     -----------------------------------------------------
 
-    -- Admin Commands
-    AdminManagementMenuCommand = 'HousingManager', --the name of the command for admins to manage all houses
+    -- Comandos de administrador
+    AdminManagementMenuCommand = 'HousingManager', -- nome do comando para admins gerenciarem todas as casas
     -----------------------------------------------------
 
-    --Maximum allowed houses per character
+    -- Máximo de casas permitidas por personagem
     Setup = {
-        MaxHousePerChar = 1,
+        MaxHousePerChar = 3,
     },
     -----------------------------------------------------
 
-    collectTaxes = false,
-    -- Tax Day for checking the ledger and collect
-    TaxDay = 26,      --This is the number day of each month that taxes will be collected on
-    TaxResetDay = 27, --This MUST be the day after TaxDay set above!!! (do not change either of these dates if the current date is one of the 2 for ex if its the 22 or 23rd day do not change these dates it will break the code)
+    collectTaxes = true,
+    -- Dia para checar o livro-caixa e coletar impostos
+    TaxDay = 26,      -- Número do dia de cada mês que os impostos serão coletados
+    TaxResetDay = 27, -- ESTE DEVE ser o dia seguinte ao TaxDay definido acima!!! (não altere estas datas se a data atual for uma das duas, por exemplo, se for dia 22 ou 23 não altere ou quebrará o código)
     -----------------------------------------------------
 
-    -- Discord Webhooks
-    WebhookLink = '', --insert your webhook link here if you want webhooks
-    WebhookTitle = 'BCC-Housing',
-    WebhookAvatar = 'https://bcc-scripts.com/servericons/provision_jail_keys.png',
+    -- Webhooks do Discord
+    WebhookLink = 'https://canary.discord.com/api/webhooks/1383900094742532147/mRitLo8be0z0v-Uif6NPDrlUUYvnTVT2QPHGCbMtx-CWT_uf1G3B-FmB2AorSKt_D46O', -- insira o link do seu webhook aqui se quiser webhooks
+    WebhookTitle = 'Ohio Casas',
+    WebhookAvatar = 'https://media.discordapp.net/attachments/1312746579735613441/1374480223273353256/ohio-logo.png?ex=684fd235&is=684e80b5&hm=2774f91f747e1c8def3d50f2352d7342b66fe39783321547d2816ce42abf694c&=&format=webp&quality=lossless&width=639&height=639',
     -----------------------------------------------------
 
-    doors = { -- Turn off/on the door buttons in house menu
+    doors = { -- Ativar/desativar botões de porta no menu da casa
         createNewDoors = true,
         removeDoors = true
     },
     -----------------------------------------------------
 
-    EnablePrivatePropertyCheck = true, -- Set true if you want to see a message that you enterd private property
+    EnablePrivatePropertyCheck = true, -- Defina como true para exibir uma mensagem ao entrar em propriedade privada
     -----------------------------------------------------
 
     UseImageAtBottomMenu = true,
     HouseImageURL = [[<img style="margin: 0 auto; max-width: 20vw; max-height: 15vh; width: auto; height: auto;" src="]] ..
         "https://bcc-scripts.com/servericons/provision_jail_keys.png" .. [[" />]],
-    --<img width="750px" height="108px" style="margin: 0 auto;" src="https://bcc-scripts.com/servericons/ammo_arrow_tracking.png" /> -- Add your desired image URL here
+    --<img width="750px" height="108px" style="margin: 0 auto;" src="https://bcc-scripts.com/servericons/ammo_arrow_tracking.png" /> -- Adicione a URL da imagem desejada aqui
     -----------------------------------------------------
 
-    dontShowNames = false, -- If true, player ID will be shown in Player List menu instead of player name
+    dontShowNames = true, -- Se true, o ID do jogador será exibido no menu de lista de jogadores ao invés do nome
     -----------------------------------------------------
 
-    -- TP Houses
-    -- Here you need to add coordinates for interiors which doors cannot be open, you need to enter in the house with Noclip and get the coords
-    -- Make sure you add the cordinates before create the TP House
+    -- Casas com TP
+    -- Aqui você precisa adicionar coordenadas para interiores cujas portas não podem ser abertas. Entre na casa com Noclip e pegue as coordenadas.
+    -- Certifique-se de adicionar as coordenadas antes de criar a casa TP
     TpInteriors = {
         Interior1 = {
             exitCoords = vector3(-1103.15, -2252.92, 50.65),
@@ -83,18 +83,19 @@ Config = {
     },
     -----------------------------------------------------
 
-    SellToPlayer = false,             -- Set to false if you don't want players to sell houses to other players
-    DefaultSellPricetoPlayer = 50000, -- Default sell price for houses to a player
+    SellToPlayer = true,             -- Defina como false se não quiser que jogadores vendam casas para outros jogadores
+    DefaultSellPricetoPlayer = 50000, -- Preço de venda padrão para casas a outro jogador
     -----------------------------------------------------
 
-    -- Global Blip Settings for menu created owned houses (not for owned houses by config)
+    -- Configurações globais de Blip para casas possuídas criadas pelo menu (não para casas configuradas por config)
     HouseBlip = {
-        active = true,           -- Show blip for owned houses
-        name = 'Your House',     -- Name of the owned blip on the map
-        sprite = 'blip_mp_base', -- Set sprite of the owned blip
-        color = 'WHITE',         -- Set color of the owned blip (see BlipColors below)
+        active = true,           -- Mostrar blip para casas possuídas
+        name = 'Sua Casa',     -- Nome do blip de casa no mapa
+        sprite = 'blip_mp_base', -- Defina o sprite do blip da casa
+        color = 'WHITE',         -- Defina a cor do blip da casa (veja BlipColors abaixo)
     },
     -----------------------------------------------------
+
 
     DefaultMenuManageRadius = 1.2,
     -----------------------------------------------------

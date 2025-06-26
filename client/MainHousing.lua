@@ -32,6 +32,12 @@ end)
 CreateThread(function() -- Devmode area
     if Config.DevMode then
         RegisterCommand(Config.DevModeCommand, function()
+            local coords = vector3(-5511.25, -2973.60, 1.21)
+            local hash = 1200826059
+
+            local object = GetClosestObjectOfType(coords.x, coords.y, coords.z, 5.0, hash, false, false, false)
+            local doorHash = Citizen.InvokeNative(`0xF7424890E4A094C0`, object) -- _DOOR_SYSTEM_GET_DOOR_STATE_HASH
+            print('DoorHash:', doorHash)
             TriggerServerEvent('bcc-housing:getPlayersInfo')
             TriggerEvent('bcc-housing:AdminCheck')
             TriggerServerEvent('bcc-housing:HotelDbRegistry')
